@@ -1,0 +1,67 @@
+div.endpoint, div.curl, div.response{
+	display: none;	
+}
+
+.response {
+	word-wrap: break-word;
+}
+.response, .response ul li {color: #5A5858; font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 13px; margin-left: 15px;}
+
+.response .string{color: green; white-space: pre-wrap;}
+
+.response .num{color: blue;}
+
+.response .prop{font-weight: bold; cursor: pointer;}
+
+.response.scroll{ height: 700px; overflow-y: scroll; overflow-x: hidden;}
+
+.endpoint-url{ color: #e09c1d; }
+
+.endpoint-row{padding-bottom: 10px;}
+
+.api-curl{
+	word-wrap: break-word;
+}
+
+.invalidkey {
+	font-size: 20px;
+	color: #E33100;
+	float:right;
+}
+.validkey {
+	font-size: 20px;
+	color: #457a1a;
+	float:right;
+}
+.success {
+	color: #457a1a;
+}
+.alert {
+	color: #E33100;
+}
+.update-fields{
+	padding-left: 20px;
+}	
+.allendpoints {
+	column-count:3;
+	-moz-column-count:3; /* Firefox */
+	-webkit-column-count:3; /* Safari and Chrome */
+}
+.allendpoints ul li {
+	width: 33%;
+	min-width: 200px;
+}
+
+.bullet-item .params{
+	text-align: left;
+	column-count:2;
+	-moz-column-count:2; /* Firefox */
+	-webkit-column-count:2; /* Safari and Chrome */
+}
+
+.bullet-item .params div{
+	display: inline-block;
+	word-break: break-word;
+	min-width: 50%;
+
+}

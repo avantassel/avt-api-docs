@@ -1,0 +1,23 @@
+{
+	"name":"Docs API Template"
+	, "description":"All responses are in JSON."
+	, "version":"v1"
+	, "versions":[ "v1" ]
+	, "contact":{"name":"Andrew Van Tassel","email":"andrew@andrewvantassel.com"}
+	, "env": [
+		{"name": "Production", "abbr": "prod", "url":"http://api.andrewvantassel.com/[version]"}
+	], "endpoints":[
+		{
+			"name": "users"
+			,"description":"Users endpoint"
+			,"method":"GET"
+			,"perms_required":false
+			,"parameters":[
+				{"field":"name","desc":"Users name","value":"Andrew"}
+				,{"field":"user_id","desc":"User ID","value":1,"test":true}
+				,{"field":"city","desc":"User City","value":"Denver","require":"state"}
+				,{"field":"state","desc":"User State","value":"CO","require":"city"}
+			]
+		}
+	]
+}
