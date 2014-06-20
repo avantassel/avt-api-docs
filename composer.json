@@ -4,7 +4,7 @@
     "type":"project",
     "keywords":["api","rest","documentation","doc","templating","explorer"],
     "homepage":"http://api.andrewvantassel.com/v1/docs/",
-    "version":"1.0.0",
+    "version":"1.0.1",
     "time":"2014-06-20",
     "license": "MIT",
     "authors": [
