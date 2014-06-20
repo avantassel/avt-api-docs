@@ -173,7 +173,7 @@
 		</div>
 	</div>
 
-	<footer class="row">
+	<footer class="row sticky">
 		<div class="large-12 columns">
 		<hr/>
 		<div class="row">

@@ -7,7 +7,7 @@ AVT Docs is a drop in API doc explorer and documentation system.
 $ curl -sS https://getcomposer.org/installer | php
 
 #if you want
-$ sudo mv composer.phar /usr/bin/local/
+$ sudo mv composer.phar /usr/bin/local/composer
 
 #run composer install
 $ composer install

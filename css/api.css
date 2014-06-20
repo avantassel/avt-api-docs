@@ -1,5 +1,5 @@
 div.endpoint, div.curl, div.response{
-	display: none;	
+	display: none;
 }
 
 .response {
@@ -41,7 +41,7 @@ div.endpoint, div.curl, div.response{
 }
 .update-fields{
 	padding-left: 20px;
-}	
+}
 .allendpoints {
 	column-count:3;
 	-moz-column-count:3; /* Firefox */
