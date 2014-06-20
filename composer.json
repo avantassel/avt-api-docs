@@ -2,7 +2,7 @@
     "name":"avantassel/avt-api-docs",
     "description":"AVT Docs is a simple API doc explorer and documentation system.",
     "type":"project",
-    "keywords":["api,rest,documentation,templating,explorer"],
+    "keywords":["api","rest","documentation","doc","templating","explorer"],
     "homepage":"http://api.andrewvantassel.com/v1/docs/",
     "version":"1.0.0",
     "time":"2014-06-20",
