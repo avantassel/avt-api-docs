@@ -1,5 +1,5 @@
 <?php
-	include('../vendor/autoload.php');
+	include('vendor/autoload.php');
 
 	$api_endpoints = @file_get_contents(__DIR__."/endpoints.json");
 	$api_json = @json_decode($api_endpoints);
@@ -42,9 +42,9 @@
   <meta name="viewport" content="width=device-width" />
   <title><?=$api_json->name?> <?=$api_json->version?> Docs</title>
 
-  <link rel="stylesheet" href="/<?=$api_json->version?>/docs/css/foundation.min.css" />
-  <link rel="stylesheet" href="/<?=$api_json->version?>/docs/css/normalize.css" />
-  <link rel="stylesheet" href="/<?=$api_json->version?>/docs/css/api.css" />
+  <link rel="stylesheet" href="css/foundation.min.css" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/api.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 
 </head>
@@ -189,12 +189,12 @@
 		</div>
 	</footer>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="/<?=$api_json->version?>/docs/js/foundation.min.js"></script>
-  <script src="/<?=$api_json->version?>/docs/js/foundation/foundation.tooltip.js"></script>
-  <script src="/<?=$api_json->version?>/docs/js/jsonformatter.min.js"></script>
-  <script src="/<?=$api_json->version?>/docs/js/url.min.js"></script>
-  <script src="/<?=$api_json->version?>/docs/js/api.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.tooltip.js"></script>
+  <script src="js/jsonformatter.min.js"></script>
+  <script src="js/url.min.js"></script>
+  <script src="js/api.js"></script>
 
   <script>
     $(document).foundation({

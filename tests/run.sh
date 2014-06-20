@@ -3,7 +3,7 @@
 #cd to this directory since paths are relative
 cd "$(dirname "$0")"
 
-echo -e "$(tput bold)$(tput setaf 5) AVTDocs Tests"
+echo -e "$(tput bold)$(tput setaf 5) AVT Docs Tests"
 
 rm -rf features/*.feature
 
