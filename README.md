@@ -1,10 +1,35 @@
-# API Docs
+# AVT Docs
+AVT Docs is a drop in API doc explorer and documentation system.
+
+## Setup
+```bash
+#install comoser
+$ curl -sS https://getcomposer.org/installer | php
+
+#if you want
+$ sudo mv composer.phar /usr/bin/local/
+
+#run composer install
+$ composer install
+```
 
 Docs are created based on the [endpoints.json](endpoints.json) file.
 
-API Docs supports methods GET and POST
-
 Intended use is for this to live in a docs directory: /[version]/docs
+
+## Tests
+Tests use the env with attribute abbr:test and endpoints parameters attribute test:true
+
+Tests are written with Behat [http://behat.org/](http://behat.org/)
+
+Add specific data structure tests by editing [FeatureContext.php](tests/features/bootstrap/FeatureContext.php)
+
+```bash
+$ chmod +x tests/run.sh
+$ tests/run.sh
+```
+
+## Config
 
 ### Endpoints
 * name (use hyphen for directory, users-add will resolve to users/add)
@@ -13,7 +38,7 @@ Intended use is for this to live in a docs directory: /[version]/docs
 * perms_required (true or false)
 * parameters (array)
 
-### Parameters 
+### Parameters
 Can have the following attributes:
 
 * field

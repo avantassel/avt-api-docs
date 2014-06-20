@@ -65,8 +65,7 @@ if(!empty($api_json->endpoints)){
 					  fwrite($file,"Given I call \"$env_url/".$e->name."/\" with params \"".$params.$env_params."\" and method \"".$e->method."\"\n");
 					  fwrite($file,"Then I get a response\n");
 					  fwrite($file,"And the response is JSON\n");
-					  fwrite($file,"And the response contains a success meta code\n");
-					  fwrite($file,"And the response contains a response\n");
+					  fwrite($file,"And the response contains a success\n");
 					fclose($file);
 					echo "Created test for $features_dir/$endpoint.feature\n";
 				}

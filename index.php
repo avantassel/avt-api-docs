@@ -3,7 +3,7 @@
 
 	$api_endpoints = @file_get_contents(__DIR__."/endpoints.json");
 	$api_json = @json_decode($api_endpoints);
-	
+
 	if(empty($api_json)){
 		header("Location: /");
 		exit;
@@ -50,7 +50,7 @@
 </head>
 <body>
 	<? include 'nav.php'; ?>
-	
+
 	<div class="row endpoints">
 		<div class="large-8 columns">
 				<h4>Choose an endpoint</h4>
@@ -60,7 +60,7 @@
 							<?
 							if(!empty($api_json->endpoints)){
 							usort($api_json->endpoints,'sortEndpointsByName');
-							foreach($api_json->endpoints as $e){ 
+							foreach($api_json->endpoints as $e){
 								$endpoint = str_replace('/', '-', $e->name);
 								?>
 								<li><a class="explore-endpoint" href="#"><?=$endpoint?></a></li>
@@ -69,8 +69,8 @@
 					</div>
 				</div>
 			</p>
-			
-			<? foreach($api_json->endpoints as $e){ 
+
+			<? foreach($api_json->endpoints as $e){
 				$endpoint = str_replace('/', '-', $e->name);
 				?>
 				<div class="row endpoint <?=str_replace('/', '-', $e->name)?>">
@@ -89,19 +89,19 @@
 							</div>
 							<div class="row">
 								<div class="large-12 columns">
-									<div class="row collapse">								
+									<div class="row collapse">
 					  				<div class="small-10 columns">
 						  				<input type="text" id="params-<?=$endpoint?>" class="params" data-endpoint="<?=$endpoint?>" data-version="<?=$api_json->version?>" data-method="<?=$e->method?>" placeholder="Enter parameters..."/>
-						  			</div>			
+						  			</div>
 						  			<div class="small-2 columns">
-										<a href="#response" id="go-<?=$endpoint?>" class="button prefix call-api" data-endpoint="<?=$endpoint?>" data-version="<?=$api_json->version?>" data-method="<?=$e->method?>">Go</a>									
+										<a href="#response" id="go-<?=$endpoint?>" class="button prefix call-api" data-endpoint="<?=$endpoint?>" data-version="<?=$api_json->version?>" data-method="<?=$e->method?>">Go</a>
 						  			</div>
 						  			</div>
-						  		</div>	
-							</div>							
+						  		</div>
+							</div>
 						</p>
 					</div>
-				</div>				
+				</div>
 			</div>
 			<? } ?>
 
@@ -112,7 +112,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="row response">
 				<div class="large-12 columns">
 					<div class="panel"><h4>Response</h4>
@@ -120,15 +120,15 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 
 		<div class="large-4 columns">
 			<h4>Endpoint Params</h4>
 
 			<div class="app-info">
-			  
-			  <? foreach($api_json->endpoints as $e){ 
+
+			  <? foreach($api_json->endpoints as $e){
 				$endpoint = str_replace('/', '-', $e->name);
 				?>
 				<div class="endpoint <?=$endpoint?>">
@@ -155,9 +155,9 @@
 					      			echo '<a href="#response" data-tooltip class="example" title="<b>Fields used:</b><br/>'.getParams($p,$e->parameters,true).'" data-params="'.getParams($p,$e->parameters).'" data-endpoint="'.$endpoint.'" data-version="'.$api_json->version.'">';
 					      		else
 					      			echo '<a href="#response" data-tooltip class="example" title="<b>Fields used:</b><br/>'.getParams($p,$e->parameters,true).'" data-params="'.getParams($p,$e->parameters).'" data-endpoint="'.$endpoint.'" data-version="'.$api_json->version.'">';
-					      	}	
+					      	}
 					      	echo $p->field;
-					      	if(isset($p->value)) 
+					      	if(isset($p->value))
 					      		echo '</a>';
 					      	?>
 					      </strong></div>
@@ -166,17 +166,33 @@
 				    	</li>
 					<? } } ?>
 				</ul>
-				<sup>t</sup> indicates query used for test	
-				</div>				
+				<sup>t</sup> indicates query used for test
+				</div>
 			<? }?>
 			</div>
 		</div>
 	</div>
- 
+
+	<footer class="row">
+		<div class="large-12 columns">
+		<hr/>
+		<div class="row">
+		<div class="large-6 columns">
+			<p>&copy; Copyright no one at all. Go to town.</p>
+		</div>
+		<div class="large-6 columns">
+		<ul class="inline-list right">
+			<li><a href="http://github.com/avantassel/avt-docs">AVT Docs</a></li>
+		</ul>
+		</div>
+		</div>
+		</div>
+	</footer>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="/<?=$api_json->version?>/docs/js/foundation.min.js"></script>
   <script src="/<?=$api_json->version?>/docs/js/foundation/foundation.tooltip.js"></script>
-  <script src="/<?=$api_json->version?>/docs/js/jsonformatter.min.js"></script>  
+  <script src="/<?=$api_json->version?>/docs/js/jsonformatter.min.js"></script>
   <script src="/<?=$api_json->version?>/docs/js/url.min.js"></script>
   <script src="/<?=$api_json->version?>/docs/js/api.js"></script>
 

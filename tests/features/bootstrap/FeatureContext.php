@@ -20,6 +20,8 @@ class FeatureContext extends BehatContext
      *
      * @param   array   $parameters     context parameters (set them up through behat.yml)
      */
+    protected $response  = null;
+
     public function __construct(array $parameters)
     {
         // Initialize your context here
@@ -31,16 +33,16 @@ class FeatureContext extends BehatContext
     public function iCallWithParamsAndMethod($endpoint,$params,$method)
     {
         $client = new GuzzleHttp\Client();
-        
+
         if($method=='GET'){
-            $response = $client->get($endpoint.'?'.$params);
+            $request = $client->get($endpoint.'?'.$params);
         }
         else if($method=='POST'){
             parse_str($params,$params_array);
-            $response = $client->post($endpoint,array('body'=>$params_array));
+            $request = $client->post($endpoint,array('body'=>$params_array));
         }
 
-        $this->response = $response->getBody();
+        $this->response = $request;
     }
 
     /**
@@ -48,7 +50,7 @@ class FeatureContext extends BehatContext
      */
     public function iGetAResponse()
     {
-        if (empty($this->response)) {
+        if (!$this->response->getBody()) {
             throw new Exception('Did not get a response from the API');
         }
     }
@@ -58,7 +60,7 @@ class FeatureContext extends BehatContext
      */
     public function theResponseIsJson()
     {
-        $data = json_decode($this->response);
+        $data = json_decode($this->response->getBody());
 
         if (empty($data)) {
             throw new Exception("Response was not JSON\n" . $this->response);
@@ -66,26 +68,13 @@ class FeatureContext extends BehatContext
     }
 
     /**
-     * @Given /^the response contains a success meta code$/
+     * @Given /^the response contains a success$/
      */
-    public function theResponseContainsASuccessMetaCode()
+    public function theResponseContainsASuccess()
     {
-        $data = json_decode($this->response);
-
-        if (!isset($data->meta->code) || (isset($data->meta->code) && $data->meta->code != 200)) {
-            throw new Exception("Response did not contain meta code of 200");
+        if ($this->response->getStatusCode() != 200) {
+            throw new Exception("Response was ".$this->response->getStatusCode()." and not 200");
         }
     }
 
-    /**
-     * @Given /^the response contains a response$/
-     */
-    public function theResponseContainsAResponse()
-    {
-        $data = json_decode($this->response);
-        
-        if (!isset($data->response)) {
-            throw new Exception("Response did not contain a response");
-        }
-    }
 }
