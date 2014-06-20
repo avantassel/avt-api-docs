@@ -1,0 +1,9 @@
+{
+    "config": {
+        "vendor-dir": "vendor/"
+    },
+    "require": {
+	      "guzzlehttp/guzzle": "~4.0"
+       ,"behat/behat": "2.4.*@stable"
+    }
+}

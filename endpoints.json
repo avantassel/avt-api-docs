@@ -6,6 +6,7 @@
 	, "contact":{"name":"Andrew Van Tassel","email":"andrew@andrewvantassel.com"}
 	, "env": [
 		{"name": "Production", "abbr": "prod", "url":"http://api.andrewvantassel.com/[version]"}
+		,{"name": "Test", "abbr": "test", "url":"http://api.andrewvantassel.com/[version]", "parameters":"app=TestAPI&key=API_KEY&token=API_TOKEN"}
 	], "endpoints":[
 		{
 			"name": "users"
