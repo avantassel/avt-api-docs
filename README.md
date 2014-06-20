@@ -1,6 +1,8 @@
 # AVT Docs
 AVT Docs is a drop in API doc explorer and documentation system.
 
+[http://api.andrewvantassel.com/v1/docs](http://api.andrewvantassel.com/v1/docs)
+
 ## Setup
 ```bash
 #install comoser
