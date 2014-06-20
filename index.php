@@ -182,7 +182,7 @@
 		</div>
 		<div class="large-6 columns">
 		<ul class="inline-list right">
-			<li><a href="http://github.com/avantassel/avt-docs">AVT Docs</a></li>
+			<li><a href="http://github.com/avantassel/avt-api-docs">AVT API Docs</a></li>
 		</ul>
 		</div>
 		</div>

@@ -1,8 +1,8 @@
 {
-    "name":"AVT Docs",
-    "description":"AVT Docs is a drop in API doc explorer and documentation system.",
+    "name":"avt-api-docs",
+    "description":"AVT Docs is a simple API doc explorer and documentation system.",
     "type":"project",
-    "keywords":"api,documentation,templating,explorer",
+    "keywords":"api,rest,documentation,templating,explorer",
     "homepage":"http://api.andrewvantassel.com/v1/docs/",
     "version":"1.0.0",
     "time":"2014-06-20",
