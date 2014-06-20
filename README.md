@@ -5,7 +5,7 @@ AVT Docs is a simple API doc explorer and documentation system.
 
 ## Setup
 ```bash
-#install comoser
+#install composer
 $ curl -sS https://getcomposer.org/installer | php
 
 #if you want
@@ -13,6 +13,9 @@ $ sudo mv composer.phar /usr/bin/local/composer
 
 #run composer install
 $ composer install
+
+# copy endpoints default
+$ cp endpoints.json.default endpoints.json
 ```
 
 Docs are created based on the [endpoints.json](endpoints.json) file.

@@ -1,3 +1,4 @@
 tests/features/*.feature
 vendor
 composer.lock
+endpoints.json

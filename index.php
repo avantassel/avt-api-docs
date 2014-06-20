@@ -5,8 +5,7 @@
 	$api_json = @json_decode($api_endpoints);
 
 	if(empty($api_json)){
-		header("Location: /");
-		exit;
+		die('endpoints.json is missing.');
 	}
 
 	function getParams($param,$endpoint_params,$format=false){
